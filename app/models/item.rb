@@ -4,7 +4,7 @@ class Item < ApplicationRecord
   belongs_to :user, optional:true
 
 
-  validates :title, :brand, :price, :type, presence: true
+  validates :title, :brand, :price, :model, presence: true
   validates :description, length: { maximum: 1000, too_long: "%{count} characters is the max allowed."}
   validates :title, length: { maximum: 140, too_long: "%{count} characters is the maximum allowed."}
   validates :price, numericality: { only_integer:true }, length: {maximum: 7}
@@ -16,5 +16,5 @@ class Item < ApplicationRecord
 
 end
 
-
+#note constants are called with uppercase!
 #postgress sql dont need to serialize
