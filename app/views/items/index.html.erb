@@ -3,7 +3,7 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        Browse Through Deals
+        Car Depot
       </h1>
     </div>
   </div>
@@ -15,8 +15,16 @@
 
     <div class="instrument border-light">
       <div class="instrument-thumb">
-      <%= link_to image_tag(item.image_url(:thumb)), item %>
+  <p>
+     <%= link_to image_tag(item.image_url(:thumb)), item %>
 
+   </p>
+
+      <!-- #image url helper provider by carrieer wave -->
+
+
+
+<!-- basically if condition exists displays it, in this case exists  -->
       <% if item.condition? %>
         <div class="condition">
           <span class="tag is-dark"><%= item.condition %></span>
@@ -33,10 +41,10 @@
 
       <p class="f3 fw6 has-text-right pt2 price"><%= number_to_currency(item.price) %></p>
 
-      <%# if item_author(item) %>
-         <%#= link_to 'Edit', edit_item_path(item), class: "button is-small" %>
-         <%#= link_to 'Delete', item, method: :delete, data: { confirm: "Are you sure ?" }, class: "button is-small" %>
-      <%# end %>
+      <% if item_author(item) %>
+         <%= link_to 'Edit', edit_item_path(item), class: "button is-small" %>
+         <%= link_to 'Delete', item, method: :delete, data: { confirm: "Are you sure ?" }, class: "button is-small" %>
+      <% end %>
 
     </div>
   </div>
